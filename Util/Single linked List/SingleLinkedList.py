@@ -89,27 +89,82 @@ class LinkedList:
 
         # temp_node = None //this code is not needed as there is no need to free the head
 
+    def delete_at_last(self):
+        if self.head is None:
+            print("List is empty")
+        else:
+            itr_node = self.head
+
+            while itr_node.next.next is not None:
+                itr_node = itr_node.next
+
+            if itr_node.next.next is None:
+                itr_node.next = None
+
+    def delete_at_index(self, index):
+        if self.head is None:
+            print("list is empty")
+        elif index == 0:
+            self.delete_at_beginning()
+        else:
+            pos = 0
+            itr_node = self.head
+            while itr_node.next is not None:
+                pos += 1
+                if pos == index:
+                    itr_node.next = itr_node.next.next
+                    break
+                itr_node = itr_node.next
+
+            if itr_node.next is None:
+                print("Out of bound", newline)
+
+    def element_in_middle(self):
+        if self.head is None:
+            print("List is empty")
+        else:
+            slow_ptr = fast_ptr = self.head
+
+            while fast_ptr and fast_ptr.next:
+                slow_ptr = slow_ptr.next
+                fast_ptr = fast_ptr.next.next
+
+            self.head = slow_ptr
+
 
 LinkedList_obj = LinkedList()
 
-LinkedList_obj.append_at_first(5)
 LinkedList_obj.append_at_first(7)
-LinkedList_obj.append_at_first(11)
+LinkedList_obj.append_at_first(6)
+LinkedList_obj.append_at_first(5)
 LinkedList_obj.print_linked_list()
 print(newline)
 
 LinkedList_obj.append_at_last(8)
-LinkedList_obj.append_at_last(12)
+LinkedList_obj.append_at_last(9)
+LinkedList_obj.append_at_last(10)
 LinkedList_obj.print_linked_list()
 print(newline)
 
-LinkedList_obj.append_at_index(data_to_insert=6, index=5)
-LinkedList_obj.print_linked_list()
-print(newline)
+# LinkedList_obj.append_at_index(data_to_insert=6, index=5)
+# LinkedList_obj.print_linked_list()
+# print(newline)
+#
+# print("Total number of elements in list is", LinkedList_obj.total_elements_in_linked_list(), end='')
+# print(newline)
+#
+# LinkedList_obj.delete_at_beginning()
+# LinkedList_obj.print_linked_list()
+# print(newline)
+#
+# LinkedList_obj.delete_at_last()
+# LinkedList_obj.print_linked_list()
+# print(newline)
+#
+# LinkedList_obj.delete_at_index(index=3)
+# LinkedList_obj.print_linked_list()
+# print(newline)
 
-print("Total number of elements in list is", LinkedList_obj.total_elements_in_linked_list(), end='')
-print(newline)
-
-LinkedList_obj.delete_at_beginning()
+LinkedList_obj.element_in_middle()
 LinkedList_obj.print_linked_list()
 print(newline)
