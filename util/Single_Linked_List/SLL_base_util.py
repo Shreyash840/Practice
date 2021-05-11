@@ -1,4 +1,4 @@
-""" Linked List"""
+""" Linked List util"""
 
 newline = "\n-------------"
 
@@ -131,40 +131,40 @@ class LinkedList:
 
             self.head = slow_ptr
 
+if __name__ == "__main__":
+    LinkedList_obj = LinkedList()
 
-LinkedList_obj = LinkedList()
+    LinkedList_obj.append_at_first(7)
+    LinkedList_obj.append_at_first(6)
+    LinkedList_obj.append_at_first(5)
+    LinkedList_obj.print_linked_list()
+    print(newline)
 
-LinkedList_obj.append_at_first(7)
-LinkedList_obj.append_at_first(6)
-LinkedList_obj.append_at_first(5)
-LinkedList_obj.print_linked_list()
-print(newline)
+    LinkedList_obj.append_at_last(8)
+    LinkedList_obj.append_at_last(9)
+    LinkedList_obj.append_at_last(10)
+    LinkedList_obj.print_linked_list()
+    print(newline)
 
-LinkedList_obj.append_at_last(8)
-LinkedList_obj.append_at_last(9)
-LinkedList_obj.append_at_last(10)
-LinkedList_obj.print_linked_list()
-print(newline)
+    # LinkedList_obj.append_at_index(data_to_insert=6, index=5)
+    # LinkedList_obj.print_linked_list()
+    # print(newline)
+    #
+    # print("Total number of elements in list is", LinkedList_obj.total_elements_in_linked_list(), end='')
+    # print(newline)
+    #
+    # LinkedList_obj.delete_at_beginning()
+    # LinkedList_obj.print_linked_list()
+    # print(newline)
+    #
+    # LinkedList_obj.delete_at_last()
+    # LinkedList_obj.print_linked_list()
+    # print(newline)
+    #
+    # LinkedList_obj.delete_at_index(index=3)
+    # LinkedList_obj.print_linked_list()
+    # print(newline)
 
-# LinkedList_obj.append_at_index(data_to_insert=6, index=5)
-# LinkedList_obj.print_linked_list()
-# print(newline)
-#
-# print("Total number of elements in list is", LinkedList_obj.total_elements_in_linked_list(), end='')
-# print(newline)
-#
-# LinkedList_obj.delete_at_beginning()
-# LinkedList_obj.print_linked_list()
-# print(newline)
-#
-# LinkedList_obj.delete_at_last()
-# LinkedList_obj.print_linked_list()
-# print(newline)
-#
-# LinkedList_obj.delete_at_index(index=3)
-# LinkedList_obj.print_linked_list()
-# print(newline)
-
-LinkedList_obj.element_in_middle()
-LinkedList_obj.print_linked_list()
-print(newline)
+    LinkedList_obj.element_in_middle()
+    LinkedList_obj.print_linked_list()
+    print(newline)
