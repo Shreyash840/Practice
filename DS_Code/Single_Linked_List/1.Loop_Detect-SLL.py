@@ -29,14 +29,20 @@ class SLLLoopDetect:
         print(newline)
 
     def detect_loop(self, linked_list: LinkedList):
-        slow_ptr = fast_ptr = linked_list.head
+        if linked_list.head is None:
+            return 0, False
 
-        while slow_ptr and fast_ptr:
-            slow_ptr = slow_ptr.next
-            fast_ptr = fast_ptr.next.next
-            if slow_ptr == fast_ptr:
-                count = self.count_element_in_loop(node=slow_ptr)
-                return count, True
+        slow_ptr = fast_ptr = linked_list.head
+        try:
+            while slow_ptr and fast_ptr:
+                slow_ptr = slow_ptr.next
+                fast_ptr = fast_ptr.next.next
+                if slow_ptr == fast_ptr:
+                    count = self.count_element_in_loop(node=slow_ptr)
+                    return count, True
+
+        except AttributeError:
+            return 0, False
 
         return 0, False
 
