@@ -2,6 +2,17 @@
 
 newline = "\n-------------"
 
+def print_linked_list(head):
+    itr_node = head
+
+    if itr_node is None:
+        print("Empty List")
+        return
+
+    while itr_node is not None:
+        print(itr_node.data, sep=' ', end='-->')
+        itr_node = itr_node.next
+
 
 class Node:
     def __init__(self, data=None):
