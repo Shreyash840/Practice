@@ -142,6 +142,7 @@ class LinkedList:
 
             self.head = slow_ptr
 
+
 if __name__ == "__main__":
     LinkedList_obj = LinkedList()
 

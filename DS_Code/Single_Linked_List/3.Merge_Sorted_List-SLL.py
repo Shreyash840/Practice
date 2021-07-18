@@ -13,7 +13,7 @@ class MergeSortedlist:
 
         else:
             while self.dummy_itr.next is not None:
-                self.dummy_itr= self.dummy_itr.next
+                self.dummy_itr = self.dummy_itr.next
 
             self.dummy_itr.next = node
 
@@ -50,6 +50,7 @@ class MergeSortedlist:
                 print(self.dummy_itr.data, sep=' ', end='-->')
                 self.dummy_itr = self.dummy_itr.next
 
+
 def in_place_merge(head_1, head_2):
     itr_1 = head_1
     itr_2 = head_2
@@ -73,13 +74,13 @@ def in_place_merge(head_1, head_2):
     return dummy_head.next
 
 
-obj = LinkedList()
-obj.append_at_first(4)
-obj.append_at_first(2)
-obj.append_at_last(18)
-obj.append_at_last(19)
-obj.append_at_last(20)
-obj.print_linked_list()
+obj1 = LinkedList()
+obj1.append_at_first(4)
+obj1.append_at_first(2)
+obj1.append_at_last(18)
+obj1.append_at_last(19)
+obj1.append_at_last(20)
+obj1.print_linked_list()
 print(newline)
 obj2 = LinkedList()
 obj2.append_at_first(4)
@@ -90,11 +91,10 @@ obj2.append_at_last(25)
 obj2.print_linked_list()
 print(newline)
 """METHOD 1, making a new list"""
-merge_obj = MergeSortedlist()
-merge_obj.compare(obj.head, obj2.head)
-merge_obj.print_list()
+# merge_obj = MergeSortedlist()
+# merge_obj.compare(obj1.head, obj2.head)
+# merge_obj.print_list()
 print(newline)
 
 """METHOD 2, in place method"""
-print_linked_list(head = in_place_merge(obj.head, obj2.head))
-
+print_linked_list(head=in_place_merge(obj1.head, obj2.head))

@@ -1,11 +1,11 @@
-from util.Single_Linked_List.SLL_base_util import newline, LinkedList, Node, print_linked_list
+from util.Single_Linked_List.SLL_base_util import newline, LinkedList, print_linked_list
 
 
 def rotate_list(head, k):
-    itr_node= head_node = head
+    itr_node = head_node = head
     length = 0
 
-    if head==None or head.next == None or k==0:
+    if head is None or head.next is None or k == 0:
         return head
 
     while itr_node is not None:
@@ -40,12 +40,10 @@ obj.append_at_last(2)
 # obj.append_at_last(5)
 obj.print_linked_list()
 print(newline)
-#----------------------#
+# ----------------------#
 
 
 """MAIN CODE"""
+final_list = rotate_list(head=obj.head, k=4)
 
-list = rotate_list(head=obj.head, k=4)
-
-print_linked_list(head=list)
-
+print_linked_list(head=final_list)
